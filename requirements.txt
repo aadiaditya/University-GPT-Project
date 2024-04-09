@@ -10,3 +10,4 @@ tiktoken==0.6.0
 tokenizers==0.15.2
 transformers==4.39.3
 xformers
+sqlite3==3.45.2
