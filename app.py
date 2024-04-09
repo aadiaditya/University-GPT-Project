@@ -34,8 +34,11 @@ sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 #load_dotenv()
 openai_api_key = st.text_input("Enter your api key:", type="password")
 #name = st.text_input("Enter your api key:", type="password")
-
+st.header('ChatBot University Of Central Missouri', divider='rainbow')
+st.header('Neural Networks Project :blue[UCM] :sunglasses:')
 # Your code here
+with st.sidebar:
+  st.write("Made By Aditya, Mohith, Murali, Keerthy")
 
 document=[]
 for file in os.listdir("docs"):
