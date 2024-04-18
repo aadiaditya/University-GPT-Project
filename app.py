@@ -101,7 +101,7 @@ document_chunks=document_splitter.split_documents(document)
 embeddings = OpenAIEmbeddings(openai_api_key = openai_api_key)
 vectordb=Chroma.from_documents(document_chunks,embedding=embeddings, persist_directory='./data')
 vectordb.persist()
-llm=ChatOpenAI(temperature=0.1, model_name='gpt-3.5-turbo',openai_api_key=openai_api_key)
+llm=ChatOpenAI(temperature=0.5, model_name='gpt-3.5-turbo',openai_api_key=openai_api_key)
 #print(llm)
 
 memory=ConversationBufferMemory(memory_key='chat_history', return_messages=True)
@@ -113,11 +113,13 @@ pdf_qa=ConversationalRetrievalChain.from_llm(llm=llm,
 #print(result['answer'])
 
 
+user_question = st.text_input("Ask a Question: ")
+prompt = "Prompt Type: Answering Student Questions Prompt Description: You will be simulating a Q&A session where students ask questions about university life, academics, campus facilities, and any other related topics. Your goal is to provide clear and informative answers to help students gain a better understanding of university life and make informed decisions. Additional Notes: Be concise and clear in your responses. Provide accurate information about university policies, procedures, and resources. Encourage students to ask follow-up questions for clarification if needed. user question : {}".format(user_question)
 user_question = st.text_input("Ask a Question from the PDF Files")
 
 if user_question:  # Only execute pdf_qa if the user enters a question
     try:
-        result = pdf_qa({"question": user_question})
+        result = pdf_qa({"question": prompt})
         st.success("Here's the answer from the PDF files:")
         st.write(result['answer'])  # Display the result using st.write
     except Exception as e:
