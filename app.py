@@ -96,7 +96,7 @@ document_chunks=document_splitter.split_documents(document)
 embeddings = OpenAIEmbeddings(openai_api_key = openai_api_key)
 vectordb=Chroma.from_documents(document_chunks,embedding=embeddings, persist_directory='./data')
 vectordb.persist()
-llm=ChatOpenAI(temperature=0.5, model_name='gpt-3.5-turbo')
+llm=ChatOpenAI(temperature=0.1, model_name='gpt-3.5-turbo',openai_api_key=openai_api_key)
 #print(llm)
 
 memory=ConversationBufferMemory(memory_key='chat_history', return_messages=True)
