@@ -120,7 +120,7 @@ user_question = st.text_input("Ask a Question: ")
 if user_question:  # Only execute pdf_qa if the user enters a question
     try:
         result = pdf_qa({"question": user_question})
-        st.success("Here's the answer from the PDF files:")
+        st.success("Here's the Response:")
         st.write(result['answer'])  # Display the result using st.write
     except Exception as e:
         st.error(f"An error occurred while processing your question: {e}")
