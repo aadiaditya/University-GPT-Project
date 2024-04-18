@@ -115,7 +115,7 @@ pdf_qa=ConversationalRetrievalChain.from_llm(llm=llm,
 
 user_question = st.text_input("Ask a Question: ")
 prompt = "Prompt Type: Answering Student Questions Prompt Description: You will be simulating a Q&A session where students ask questions about university life, academics, campus facilities, and any other related topics. Your goal is to provide clear and informative answers to help students gain a better understanding of university life and make informed decisions. Additional Notes: Be concise and clear in your responses. Provide accurate information about university policies, procedures, and resources. Encourage students to ask follow-up questions for clarification if needed. user question : {}".format(user_question)
-user_question = st.text_input("Ask a Question from the PDF Files")
+#user_question = st.text_input("Ask a Question from the PDF Files")
 
 if user_question:  # Only execute pdf_qa if the user enters a question
     try:
