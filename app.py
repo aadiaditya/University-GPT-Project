@@ -44,8 +44,8 @@ st.write("- Find information about campus facilities, such as libraries, labs, a
 
 
 
-openai_api_key = st.text_input("Enter your api key:", type="password")
-#openai_api_key = st.secrets["openai_api_key"]
+#openai_api_key = st.text_input("Enter your api key:", type="password")
+openai_api_key = st.secrets["openai_api_key"]
 
 
 #load_dotenv()
