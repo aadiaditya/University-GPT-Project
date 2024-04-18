@@ -1,5 +1,6 @@
 accelerate==0.29.1
 bitsandbytes==0.43.0
+pysqlite3-binary
 chromadb==0.4.24
 langchain
 openai==1.16.2
@@ -10,4 +11,3 @@ tiktoken==0.6.0
 tokenizers==0.15.2
 transformers==4.39.3
 xformers
-pysqlite3-binary
